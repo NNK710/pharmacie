@@ -1,0 +1,5 @@
+#F1F1D3 Beige
+#E3EBD0
+#C7DDC5
+#9FCDA8
+#7DC2A5 Vert
