@@ -2,7 +2,6 @@
 // http://expressjs.com/fr/starter/hello-world.html
 const mysql = require('mysql')
 var express = require('express');
-var app = express();
 const bodyparser = require('body-parser')
 const iniparser = require('iniparser')
 
@@ -13,10 +12,10 @@ app.use(express.static('views'))
 app.use(express.static('public'))
 
 let mysqlconnexion = mysql.createConnection({
- host:configDB['dev']['host'],
- user:configDB['dev']['user'],
- password:configDB['dev']['password'],
- database:configDB['dev']['database']
+ host:configDB['sauteuhz']['host'],
+ user:configDB['sauteuhz']['user'],
+ password:configDB['sauteuhz']['password'],
+ database:configDB['sauteuhz']['database']
 })
 mysqlconnexion.connect((err) => {
  if (!err) console.log('BDD connectée.')
