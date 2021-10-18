@@ -1,0 +1,22 @@
+{
+  "name": "projet-pharmacie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NNK710/pharmacie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NNK710/pharmacie/issues"
+  },
+  "homepage": "https://github.com/NNK710/pharmacie#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
