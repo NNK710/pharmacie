@@ -19,6 +19,7 @@ ordo_label
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>90</y><w>130</w><h>100</h></coordinates><panel_attributes>Médicament
 --
 _medoc_sq_
+medoc_photo
 medoc_nom
 medoc_type
 medoc_description
