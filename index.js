@@ -6,12 +6,12 @@ var app = express();
 const bodyparser = require('body-parser')
 const iniparser = require('iniparser')
 
-
 let configDB = iniparser.parseSync('./DB.ini')
 let app = express()
 app.set('view engine', 'ejs')
 app.use(express.static('views'))
 app.use(express.static('public'))
+
 let mysqlconnexion = mysql.createConnection({
  host:configDB['dev']['host'],
  user:configDB['dev']['user'],
