@@ -25,7 +25,7 @@ mysqlconnexion.connect((err) => {
 
 // '/' est la route racine
 app.get('/', function (req, res) {
-  res.render("./index");
+  res.redirect("./search");
 });
 
 app.get('/search', (req, res) => {
