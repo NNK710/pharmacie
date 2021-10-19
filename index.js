@@ -31,7 +31,7 @@ app.get('/search', (req, res) => {
   mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
   if (!err) {
   console.log(lignes)
-  res.render("index", {index : lignes})
+  res.render("./index", {index : lignes})
   }
   })
  })
