@@ -27,6 +27,19 @@ app.get('/', function (req, res) {
   res.render("./index");
 });
 
+// chercher les messages contenant ElementSearch dans le champ message (query)
+app.get('/search/', (req, res) => {
+  let critere = '%'+req.query.msgSearch+'%' //query. Exemple : %you%
+  console.log("Find this : "+critere)
+  mysqlconnexion.query('SELECT * FROM tlivre WHERE message LIKE ?', [critere], 
+ (err, lignes, champs) => {
+  if (!err) {
+  console.log(lignes)
+  res.send(lignes)
+  }
+  })
+ })
+
 app.listen(3000, function () {
   console.log("Application d'exemple écoutant sur le port 3000 !");
 });
