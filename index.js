@@ -27,6 +27,15 @@ app.get('/', function (req, res) {
   res.render("./index");
 });
 
+app.get('/search', (req, res) => {
+  mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
+  if (!err) {
+  console.log(lignes)
+  res.render("index", {index : lignes})
+  }
+  })
+ })
+
 
 
 app.listen(3000, function () {
