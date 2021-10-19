@@ -22,3 +22,7 @@ body{
 #divHeader{
     background-color: #FFF5DA ;
 }
+
+#parent{
+    display: flex;
+}
