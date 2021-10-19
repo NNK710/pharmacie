@@ -19,7 +19,7 @@ let mysqlconnexion = mysql.createConnection({
 })
 mysqlconnexion.connect((err) => {
  if (!err) console.log('BDD connectée.')
- else console.log('BDD connexion échouée \n Erreur: '+JSON.stringify(err))
+ else console.log('BDD connexion échouée \n Erreurs: '+JSON.stringify(err))
 })
 
 // '/' est la route racine
