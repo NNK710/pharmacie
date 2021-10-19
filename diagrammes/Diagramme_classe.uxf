@@ -16,13 +16,14 @@ med_mobile
 _ordo_id_
 ordo_pdf
 ordo_label
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>90</y><w>130</w><h>100</h></coordinates><panel_attributes>Médicament
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>90</y><w>130</w><h>120</h></coordinates><panel_attributes>Médicament
 --
 _medoc_sq_
 medoc_photo
 medoc_nom
 medoc_type
 medoc_description
+medoc_stock
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>340</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=1..*

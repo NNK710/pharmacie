@@ -1,3 +1,11 @@
 <%- include('header') %>
     
+<div id="listeclient">
+    <% index.forEach(function(user){ %>
+
+        <strong><%= user.cli_nom %> <%= user.cli_prenom %> </strong>
+
+    <% }) %>
+</div>
+
 <%- include('footer') %>
