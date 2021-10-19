@@ -15,7 +15,8 @@ let mysqlconnexion = mysql.createConnection({
  host:configDB['sauteuhz']['host'],
  user:configDB['sauteuhz']['user'],
  password:configDB['sauteuhz']['password'],
- database:configDB['sauteuhz']['database']
+ database:configDB['sauteuhz']['database'],
+ port:configDB['sauteuhz']['port']
 })
 mysqlconnexion.connect((err) => {
  if (!err) console.log('BDD connectée.')
