@@ -1,0 +1,17 @@
+<%- include('header') %>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+        
+    <div id="listeclient">
+        <% index.forEach(function(user){ %>
+
+            <strong><%= user.cli_nom %> <%= user.cli_prenom %> </strong>
+
+        <% }) %>
+    </div>
+</div>
+
+<%- include('footer') %>
