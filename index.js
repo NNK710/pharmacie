@@ -25,17 +25,47 @@ mysqlconnexion.connect((err) => {
 
 // '/' est la route racine
 app.get('/', function (req, res) {
-  res.redirect("./search");
+  res.render("./index");
 });
 
-app.get('/search', (req, res) => {
+app.get('/listeClients', (req, res) => {
   mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
   if (!err) {
   console.log(lignes)
-  res.render("./index", {index : lignes})
+  res.render("./listeClients", {index : lignes})
   }
   })
  })
+
+ app.get('/detailClient', (req, res) => {
+  mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
+  if (!err) {
+  console.log(lignes)
+  res.render("./detailClient", {index : lignes})
+  }
+  })
+ })
+
+
+ app.get('/listeMedocs', (req, res) => {
+  mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
+  if (!err) {
+  console.log(lignes)
+  res.render("./listeMedocs", {index : lignes})
+  }
+  })
+ })
+
+
+ app.get('/detailMedoc', (req, res) => {
+  mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
+  if (!err) {
+  console.log(lignes)
+  res.render("./detailMedoc", {index : lignes})
+  }
+  })
+ })
+
 
 
 
