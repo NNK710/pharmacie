@@ -38,7 +38,7 @@ const Clients_detail = (req, res) => {
         mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
         if (!err) {
         console.log(lignes)
-        res.render("./listeClients", {index : lignes})
+        res.render("./detailClients", {index : lignes})
         }
         })
 }
@@ -56,7 +56,7 @@ const Medocs_detail = (req, res) => {
         mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
         if (!err) {
         console.log(lignes)
-        res.render("./listeClients", {index : lignes})
+        res.render("./detailMedocs", {index : lignes})
         }
         })
 }
