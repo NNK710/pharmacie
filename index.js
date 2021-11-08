@@ -4,6 +4,8 @@ const mysql = require('mysql')
 var express = require('express');
 const bodyparser = require('body-parser')
 const iniparser = require('iniparser')
+const Routeur = require('./routes/ClientsRoute')
+const Routeur = require('./routes/MedocsRoute')
 
 let configDB = iniparser.parseSync('./DB.ini')
 let app = express()
