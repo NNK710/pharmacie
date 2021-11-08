@@ -48,7 +48,7 @@ app.get('/listeClients', (req, res) => {
 
 
  app.get('/listeMedocs', (req, res) => {
-  mysqlconnexion.query('SELECT * FROM client', (err, lignes, champs) => {
+  mysqlconnexion.query('SELECT * FROM medicament', (err, lignes, champs) => {
   if (!err) {
   console.log(lignes)
   res.render("./listeMedocs", {index : lignes})
