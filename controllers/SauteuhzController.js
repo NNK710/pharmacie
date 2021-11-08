@@ -1,8 +1,6 @@
 const iniparser = require('iniparser')
 let configDB = iniparser.parseSync('./DB.ini')
 const mysql = require('mysql')
-var express = require('express');
-const bodyparser = require('body-parser')
 
 let mysqlconnexion = mysql.createConnection({
     host:configDB['sauteuhz']['host'],
