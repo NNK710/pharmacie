@@ -14,11 +14,12 @@ app.use(express.static('public'))
 app.use('/', Routeur);
 
 
-// '/' est la route racine
+/* '/' est la route racine
 app.get('/', function (req, res) {
   res.render("./index");
 });
 
+*/
 
 app.listen(3000, function () {
   console.log("Application d'exemple écoutant sur le port 3000 !");
