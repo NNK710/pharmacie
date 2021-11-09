@@ -1,8 +1,6 @@
 // Exemple adapté de la mise en route d'Express : 
 // http://expressjs.com/fr/starter/hello-world.html
 var express = require('express');
-const bodyparser = require('body-parser')
-const iniparser = require('iniparser')
 const Routeur = require('./routes/SauteuhzRoute')
 
 let app = express()
