@@ -1,7 +1,6 @@
+const mysql = require('mysql')
 const iniparser = require('iniparser')
 let configDB = iniparser.parseSync('./DB.ini')
-const mysql = require('mysql')
-
 
 let mysqlconnexion = mysql.createConnection({
     host:configDB['sauteuhz']['host'],
@@ -15,6 +14,4 @@ let mysqlconnexion = mysql.createConnection({
     else console.log('BDD connexion échouée \n Erreur: '+JSON.stringify(err))
    })
 
-const Sauteuhz = mysql.model('Livre', tlivreSchema);
-module.exports = Sauteuhz;
-
+module.exports = mysqlconnexion;
