@@ -1,8 +1,9 @@
-
+//Importation de la connexion à la bdd
 var db = require('../database')
+//Importation du fichier models
 var sauteuhzModel = require('../models/sauteuhzModel');
 
-
+//Exportation des fonctions du controller
 module.exports = {
 
         Sauteuhz_accueil : (req, res) => {
