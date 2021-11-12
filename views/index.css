@@ -72,6 +72,7 @@ body{
     height: 30vh;
     width: 30vh;
     margin-top: -35vh;
+    margin-right: 10vh ;
 }
 
 #btnMedoc{
@@ -89,5 +90,17 @@ body{
 }
 
 #pListeClient{
-    padding-left: 2vh;
+    padding-left: 4vh;
+    margin-right: 14vh;
+    text-decoration:none;
+    font-size: 4vh;
+    color: black;
+    font-weight: bold;
+}
+
+#pListeMedoc{
+    text-decoration:none;
+    font-size: 4vh;
+    color: black;
+    font-weight: bold;
 }
