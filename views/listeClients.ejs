@@ -5,12 +5,19 @@
         <div id="margeGaucheFade"></div>
     </div>
         
-    <div id="listemedocs">
+    <div id="listeClients">
+        <table>
         <% index.forEach(function(user){ %>
-
-            <strong><%= user.cli_nom %> <%= user.cli_prenom %> </strong>
+            
+                <tr>
+                    <td>
+                        <strong><a href="/detailClient"><%= user.cli_nom %> <%= user.cli_prenom %> </a> </strong>
+                    </td>
+                </tr>
+           
 
         <% }) %>
+    </table>
     </div>
 </div>
 

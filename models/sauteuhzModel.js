@@ -25,7 +25,7 @@ module.exports={
 
     Medocs_affichage:function(callback) {
 
-        var sql='SELECT * FROM medicament';
+        var sql='SELECT medoc_nom FROM medicament';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
