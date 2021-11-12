@@ -1,11 +1,16 @@
+
+
 //Importation de la connexion à la bdd
 var db = require('../database')
+
+
 
 //Exportation du model mysql (requêtes...)
 module.exports={
 
     Clients_affichage:function(callback){
   
+    
         var sql='SELECT * FROM client';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
