@@ -24,7 +24,7 @@ module.exports = {
         Clients_detail: (req, res) =>{
                 sauteuhzModel.Clients_detail(function(lignes){
                         console.log(lignes)
-                        res.render("./detailClient", {index : lignes});
+                        res.render("./detailClient/:nom/:prenom", {index : lignes});
                 });
         },
 
