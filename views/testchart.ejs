@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Graphiques</title>
+
+    
+</head>
+<body>
+
+    <script> var chartjs = require('chart.js'); </script>
+
+    <div>
+        <canvas id="monGraph" width="400" height="100"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+ let ctx = document.querySelector("#monGraph")
+        let graph = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+                datasets: [{
+                    label: 'Stock médocs',
+                    data: [12, 19, 3, 5, 2, 3, 18, 24, 40, 29, 20, 15],
+                    borderColor:'red',
+                    backgroundColor: 'black',
+                },
+                {
+                    label: 'Besoin Médocs',
+                    data: [14, 2, 5, 8, 7, 22, 5, 19, 20, 35, 14, 9],
+                    borderColor: 'lightgreen',
+                    backgroundColor: 'cyan'
+                }]
+            },
+        })
+    </script>
+    
+</body>
+</html>

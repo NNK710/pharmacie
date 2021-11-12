@@ -10,6 +10,10 @@ module.exports = {
                 res.render("./index");
         },
 
+        Sauteuhz_testchart : (req, res) => {
+                res.render("./testchart");
+        },
+
         Clients_affichage: (req, res) => {
                 sauteuhzModel.Clients_affichage(function(lignes){
                         console.log(lignes)
