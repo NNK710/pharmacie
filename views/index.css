@@ -87,6 +87,7 @@ body{
 
 #divBtnText{
     display: flex;
+    padding-bottom: 30vh;
 }
 
 #pListeClient{
@@ -96,7 +97,6 @@ body{
     font-size: 4vh;
     color: black;
     font-weight: bold;
-    padding-bottom: 5vh;
 }
 
 #pListeMedoc{
