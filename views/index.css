@@ -48,11 +48,46 @@ body{
 #divHeader{
     background-color: #FFF5DA ;
     padding: 2vh;
+    display: flex;
 }
 #divHeader h1{
     color: #304900;
+    padding-top: 2vh;
+}
+
+#titrePharmacie{
+    text-decoration:none;
 }
 
 #parent{
     display: flex;
+}
+
+#logoPharmacie{
+    height: 10vh;
+    width: 17.6vh;
+}
+
+#btnClient{
+    height: 30vh;
+    width: 30vh;
+    margin-top: -35vh;
+}
+
+#btnMedoc{
+    height: 30vh;
+    width: 30vh;
+    margin-top: -35vh;
+}
+
+#divBtn{
+    margin: auto;
+}
+
+#divBtnText{
+    display: flex;
+}
+
+#pListeClient{
+    padding-left: 2vh;
 }
