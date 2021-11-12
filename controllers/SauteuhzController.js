@@ -10,6 +10,10 @@ module.exports = {
                 res.render("./index");
         },
 
+        Sauteuhz_testchart : (req, res) => {
+                res.render("./testchart");
+        },
+
         Clients_affichage: (req, res) => {
                 sauteuhzModel.Clients_affichage(function(lignes){
                         console.log(lignes)
@@ -20,7 +24,7 @@ module.exports = {
         Clients_detail: (req, res) =>{
                 sauteuhzModel.Clients_detail(function(lignes){
                         console.log(lignes)
-                        res.render("./detailClients", {index : lignes});
+                        res.render("./detailClient", {index : lignes});
                 });
         },
 
@@ -34,7 +38,7 @@ module.exports = {
         Medocs_detail: (req, res) =>{
                 sauteuhzModel.Medocs_detail(function(lignes){
                         console.log(lignes)
-                        res.render("./detailMedocs", {index : lignes});
+                        res.render("./detailMedoc", {index : lignes});
                 });
         }
 

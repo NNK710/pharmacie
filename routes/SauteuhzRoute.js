@@ -9,13 +9,15 @@ const routeur = express.Router();
 //Définition des routes et des fonctions associées
 routeur.get('/', SauteuhzController.Sauteuhz_accueil);
 
+routeur.get('/testchart', SauteuhzController.Sauteuhz_testchart);
+
 routeur.get('/listeClients/', SauteuhzController.Clients_affichage);
 
-routeur.get('/detailClients/', SauteuhzController.Clients_detail);
+routeur.get('/detailClient/', SauteuhzController.Clients_detail);
  
 routeur.get('/listeMedocs/', SauteuhzController.Medocs_affichage);
 
-routeur.get('/detailMedocs/', SauteuhzController.Medocs_detail);
+routeur.get('/detailMedoc/', SauteuhzController.Medocs_detail);
 
 //Exportation du module routeur
 module.exports = routeur 
