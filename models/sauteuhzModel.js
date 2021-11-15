@@ -44,8 +44,15 @@ module.exports={
             if (err) throw err;
             return callback(data);
         });
+    },
+
+    Chart_affichage:function(callback) {
+
+        var sql='SELECT * FROM stockmgnt';
+        db.query(sql, function (err, data, fields){
+            if (err) throw err;
+            return callback(data);
+        });
     }
 
-
 }
-

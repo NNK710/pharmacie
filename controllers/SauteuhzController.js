@@ -1,5 +1,6 @@
 //Importation de la connexion à la bdd
-var db = require('../database')
+var db = require('../database');
+const { Chart_affichage } = require('../models/sauteuhzModel');
 //Importation du fichier models
 var sauteuhzModel = require('../models/sauteuhzModel');
 
@@ -10,9 +11,9 @@ module.exports = {
                 res.render("./index");
         },
 
-        Sauteuhz_testchart : (req, res) => {
-                res.render("./testchart");
-        },
+       // Sauteuhz_testchart : (req, res) => {
+       //         res.render("./testchart");
+      //  },
 
         Clients_affichage: (req, res) => {
                 sauteuhzModel.Clients_affichage(function(lignes){
@@ -39,6 +40,13 @@ module.exports = {
                 sauteuhzModel.Medocs_detail(function(lignes){
                         console.log(lignes)
                         res.render("./detailMedoc", {index : lignes});
+                });
+        },
+
+        Chart_affichage: (req, res) =>{
+                sauteuhzModel.Chart_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./testchart", {index : lignes});
                 });
         }
 
