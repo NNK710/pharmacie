@@ -79,9 +79,4 @@ module.exports = {
                 });
         },
 
-        Admin_affichage: (req, res) =>{
-                res.render("./paneladmin");
-                
-        }
-
 }
