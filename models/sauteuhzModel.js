@@ -49,22 +49,22 @@ module.exports={
 
     Medocs_update_stock: (medoc, mois) =>{
 
-
         let sql = "UPDATE stockmgnt SET stock = "+medoc+" WHERE ID = "+mois+"";
         db.query(sql, function (err, result) {
           if (err) throw err;
           console.log(result.affectedRows + " record(s) updated");
         });
+
     },
 
-    Medocs_update_besoin: () =>{
+    Medocs_update_besoin: (medoc, mois) =>{
 
-        let sql = "UPDATE stockmgnt SET Besoin = 1 WHERE ID = 1";
+        let sql = "UPDATE stockmgnt SET Besoin = "+medoc+" WHERE ID = "+mois+"";
         db.query(sql, function (err, result) {
           if (err) throw err;
           console.log(result.affectedRows + " record(s) updated");
         });
-},
+    },
 
     Chart_affichage:function(callback) {
 

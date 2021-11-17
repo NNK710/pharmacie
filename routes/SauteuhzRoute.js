@@ -22,7 +22,8 @@ routeur.get('/listeMedocs/', SauteuhzController.Medocs_affichage);
 routeur.get('/detailMedoc/', SauteuhzController.Medocs_detail);
 
 routeur.get('/paneladmin/', SauteuhzController.Admin_affichage);
-routeur.get('/stockadmin', SauteuhzController.Medocs_update_stock);
+routeur.get('/updatestock', SauteuhzController.Medocs_update_stock);
+routeur.get('/updatebesoin', SauteuhzController.Medocs_update_besoin);
 //routeur.get('*', 404);
 
 

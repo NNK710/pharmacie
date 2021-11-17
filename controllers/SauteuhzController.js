@@ -50,13 +50,25 @@ module.exports = {
                 console.log(medoc);
                 console.log(mois);
                 sauteuhzModel.Medocs_update_stock(medoc, mois)
-                        res.render("./index");
+                
+                sauteuhzModel.Chart_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./testchart", {index : lignes});
+                });
 
         },
 
         Medocs_update_besoin: (req, res) =>{
-                sauteuhzModel.Medocs_update_besoin()
+                let medoc = req.query['medoc'];
+                let mois = req.query['mois'];
+                console.log(medoc);
+                console.log(mois);
+                sauteuhzModel.Medocs_update_besoin(medoc, mois)
+                
+                sauteuhzModel.Chart_affichage(function(lignes){
+                        console.log(lignes)
                         res.render("./testchart", {index : lignes});
+                });
 
         },
 
