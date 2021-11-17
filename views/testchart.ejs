@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Graphiques</title>
-
-    
-</head>
-<body>
+<%- include('header') %>
 
     <script> var chartjs = require('chart.js'); </script>
 
-    <div>
-        <canvas id="monGraph" width="400" height="100"></canvas>
+    <div id="parent">
+        <div id="margeGaucheParent">
+            <div id="margeGauche"></div>
+            <div id="margeGaucheFade"></div>
+        </div>
+
+    <div id="divBtn">
+        <canvas id="monGraph" width="1000" height="500"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -45,6 +43,9 @@
                 
     </script>
 
-    
-</body>
-</html>
+<div id="margeDroiteParent">
+    <div id="margeDroiteFade"></div>
+    <div id="margeDroite"></div>
+</div>
+
+<%- include('footer') %>

@@ -1,4 +1,5 @@
 //Importation de la connexion à la bdd
+const { urlencoded } = require('body-parser');
 var db = require('../database');
 const { Chart_affichage } = require('../models/sauteuhzModel');
 //Importation du fichier models
@@ -11,9 +12,9 @@ module.exports = {
                 res.render("./index");
         },
 
-       // Sauteuhz_testchart : (req, res) => {
-       //         res.render("./testchart");
-      //  },
+        // Sauteuhz_testchart : (req, res) => {
+        //         res.render("./testchart");
+        //  },
 
         Clients_affichage: (req, res) => {
                 sauteuhzModel.Clients_affichage(function(lignes){
@@ -43,11 +44,32 @@ module.exports = {
                 });
         },
 
+        Medocs_update_stock: (req, res) =>{
+                console.log(1);
+                let medoc = req.params.medoc;
+                let mois = req.params.mois;
+                console.log(medoc);
+                sauteuhzModel.Medocs_update_stock(medoc, mois)
+                        res.render("./index");
+
+        },
+
+        Medocs_update_besoin: (req, res) =>{
+                sauteuhzModel.Medocs_update_besoin()
+                        res.render("./testchart", {index : lignes});
+
+        },
+
         Chart_affichage: (req, res) =>{
                 sauteuhzModel.Chart_affichage(function(lignes){
                         console.log(lignes)
                         res.render("./testchart", {index : lignes});
                 });
+        },
+
+        Admin_affichage: (req, res) =>{
+                res.render("./paneladmin");
+                
         }
 
 }
