@@ -45,10 +45,10 @@ module.exports = {
         },
 
         Medocs_update_stock: (req, res) =>{
-                console.log(1);
-                let medoc = req.params.medoc;
-                let mois = req.params.mois;
+                let medoc = req.query['medoc'];
+                let mois = req.query['mois'];
                 console.log(medoc);
+                console.log(mois);
                 sauteuhzModel.Medocs_update_stock(medoc, mois)
                         res.render("./index");
 
