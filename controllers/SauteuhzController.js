@@ -32,6 +32,16 @@ module.exports = {
                 }, cli_Id);
         },
 
+        AjouterClient: (req, res) =>{
+                /* A remplacer par les secu et tt*/
+                let medoc_Id = req.query['medoc_Id'];
+                let medoc = req.query['medoc'];
+                let mois = req.query['mois'];
+                sauteuhzModel.Ajouter_client(cli_nom, cli_prenom, cli_naissance, cli_secu, cli_mutuelle)
+
+                res.render("./ajouterClient" ); 
+        },
+
         Medocs_affichage: (req, res) =>{
                 sauteuhzModel.Medocs_affichage(function(lignes){
                         console.log(lignes)
