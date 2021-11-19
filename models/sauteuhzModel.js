@@ -12,7 +12,7 @@ module.exports={
     Clients_affichage:function(callback){
   
     
-        var sql='SELECT cli_nom, cli_prenom FROM client';
+        var sql='SELECT cli_Id, cli_nom, cli_prenom FROM client';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
@@ -20,9 +20,10 @@ module.exports={
         
     },
 
-    Clients_detail:function(callback){
+    Clients_detail:function(callback, cli_Id){
 
-        var sql='SELECT * FROM client';
+        console.log(cli_Id);
+        var sql='SELECT * FROM client where cli_Id = '+cli_Id+'';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
@@ -47,9 +48,9 @@ module.exports={
         });
     },
 
-    Medocs_update_stock: (medoc, mois) =>{
+    Medocs_update_stock: (medoc, mois, medoc_Id) =>{
 
-        let sql = "UPDATE stockmgnt SET stock = "+medoc+" WHERE ID = "+mois+"";
+        let sql = "UPDATE medicament SET medoc_stock"+mois+" = "+medoc+" WHERE medoc_Id = "+medoc_Id+"";
         db.query(sql, function (err, result) {
           if (err) throw err;
           console.log(result.affectedRows + " record(s) updated");
@@ -58,17 +59,18 @@ module.exports={
     },
 
     Medocs_update_besoin: (medoc, mois) =>{
+        
 
-        let sql = "UPDATE stockmgnt SET Besoin = "+medoc+" WHERE ID = "+mois+"";
+        let sql = "UPDATE medicament SET medoc_besoin"+mois+" = "+medoc+" WHERE medoc_Id = "+mois+"";
         db.query(sql, function (err, result) {
           if (err) throw err;
           console.log(result.affectedRows + " record(s) updated");
         });
     },
 
-    Chart_affichage:function(callback) {
+    Chart_affichage:function(callback, medoc_Id) {
 
-        var sql='SELECT medoc_stockJanvier, medoc_stockFevrier, medoc_stockMars, medoc_stockAvril, medoc_stockMai, medoc_stockJuin, medoc_stockJuillet,medoc_stockAout, medoc_stockSeptembre, medoc_stockOctobre, medoc_stockNovembre, medoc_stockDecembre, medoc_besoinJanvier,medoc_besoinFevrier, medoc_besoinMars, medoc_besoinAvril, medoc_besoinMai, medoc_besoinJuin, medoc_besoinJuillet, medoc_besoinAout, medoc_besoinSeptembre, medoc_besoinOctobre, medoc_besoinNovembre, medoc_besoinDecembre FROM medicament Where medoc_Id= 2';
+        var sql='SELECT medoc_stockJanvier, medoc_stockFevrier, medoc_stockMars, medoc_stockAvril, medoc_stockMai, medoc_stockJuin, medoc_stockJuillet,medoc_stockAout, medoc_stockSeptembre, medoc_stockOctobre, medoc_stockNovembre, medoc_stockDecembre, medoc_besoinJanvier,medoc_besoinFevrier, medoc_besoinMars, medoc_besoinAvril, medoc_besoinMai, medoc_besoinJuin, medoc_besoinJuillet, medoc_besoinAout, medoc_besoinSeptembre, medoc_besoinOctobre, medoc_besoinNovembre, medoc_besoinDecembre FROM medicament Where medoc_Id= '+medoc_Id+'';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);

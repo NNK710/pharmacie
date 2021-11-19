@@ -8,7 +8,7 @@
     <div id="detailMedoc">
         <% index.forEach(function(user){ %>
 
-            <strong> <%= user.medoc_nom %>  <%= user.medoc_type %> <%= user.medoc_description %>  </strong>
+            <strong> <%= user.medoc_nom %>  <%= user.medoc_type %> <%= user.medoc_description %>  </strong><a href="/testchart?medoc_Id=<%= user.medoc_Id %>"><button></button></a>
 
         <% }) %>
     </div>
