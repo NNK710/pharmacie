@@ -38,10 +38,11 @@ module.exports = {
         },
 
         Medocs_detail: (req, res) =>{
+                let medoc_Id = req.query['medoc_Id'];
                 sauteuhzModel.Medocs_detail(function(lignes){
                         console.log(lignes)
                         res.render("./detailMedoc", {index : lignes});
-                });
+                },medoc_Id)
         },
 
         Medocs_update_stock: (req, res) =>{

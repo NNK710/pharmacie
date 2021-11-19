@@ -16,8 +16,8 @@
 
     <script>
             
-            let stock = ('<% index.forEach(function(user){ %><%= user.Stock %>,<% }) %>');
-            let besoin = ('<% index.forEach(function(user){ %><%= user.Besoin %>,<% }) %>');
+            let stock = ('<% index.forEach(function(user){ %><%= user.medoc_stockJanvier %>, <%= user.medoc_stockFevrier %>, <%= user.medoc_stockMars %>, <%= user.medoc_stockAvril %>, <%= user.medoc_stockMai %>, <%= user.medoc_stockJuin %>, <%= user.medoc_stockJuillet %>, <%= user.medoc_stockAout %>, <%= user.medoc_stockSeptembre %>, <%= user.medoc_stockOctobre %>, <%= user.medoc_stockNovembre %>, <%= user.medoc_stockDecembre %> <% }) %>');
+            let besoin = ('<% index.forEach(function(user){ %><%= user.medoc_besoinJanvier %>, <%= user.medoc_besoinFevrier %>, <%= user.medoc_besoinMars %>, <%= user.medoc_besoinAvril %>, <%= user.medoc_besoinMai %>, <%= user.medoc_besoinJuin %>, <%= user.medoc_besoinJuillet %>, <%= user.medoc_besoinAout %>, <%= user.medoc_besoinSeptembre %>, <%= user.medoc_besoinOctobre %>, <%= user.medoc_besoinNovembre %>, <%= user.medoc_besoinDecembre %><% }) %>');
             let tab_stock = stock.split(',');
             let tab_besoin = besoin.split(',');
 

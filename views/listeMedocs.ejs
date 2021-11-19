@@ -6,11 +6,18 @@
     </div>
         
     <div id="listeMedocs">
-        <% index.forEach(function(user){ %>
-
-            <strong> <a href="/detailMedoc"> <%= user.medoc_nom %> <%= user.medoc_description %> </a> </strong>
-
-        <% }) %>
+        <table>
+            <% index.forEach(function(user){ %>
+                
+                    <tr>
+                        <td>
+                            <strong><a href="/detailMedoc?medoc_Id=<%= user.medoc_Id %>"><%= user.medoc_nom %> <%= user.medoc_type %> </a> </strong>
+                        </td>
+                    </tr>
+               
+    
+            <% }) %>
+        </table>
     </div>
 </div>
 
