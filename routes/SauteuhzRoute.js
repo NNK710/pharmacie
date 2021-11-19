@@ -15,7 +15,7 @@ routeur.get('/testchart', SauteuhzController.Chart_affichage);
 
 routeur.get('/listeClients/', SauteuhzController.Clients_affichage);
 
-routeur.get('/detailClient/:nom/:prenom', SauteuhzController.Clients_detail);
+routeur.get('/detailClient', SauteuhzController.Clients_detail);
  
 routeur.get('/listeMedocs/', SauteuhzController.Medocs_affichage);
 
