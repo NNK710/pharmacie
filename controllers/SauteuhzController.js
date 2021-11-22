@@ -44,7 +44,10 @@ module.exports = {
                 let cli_naissance = req.query['cli_naissance'];
                 let cli_mutuelle = req.query['cli_mutuelle'];
                 sauteuhzModel.Ajouter_client( cli_secu, cli_nom, cli_prenom, cli_naissance, cli_mutuelle)
-                res.render("./ajouterClient" ); 
+                sauteuhzModel.Clients_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./listeClients", {index : lignes});
+                });
         },
 
         Medocs_affichage: (req, res) =>{
