@@ -24,7 +24,7 @@ routeur.get('/detailMedoc/', SauteuhzController.Medocs_detail);
 routeur.get('/ajouterClient/', SauteuhzController.Ajouter_Client);
 routeur.get('/addClient', SauteuhzController.Add_Client);
 
-routeur.get('/updatestock', SauteuhzController.Medocs_update_stock);
+routeur.post('/updatestock/:medoc_Id/:medoc/:mois', SauteuhzController.Medocs_update_stock);
 routeur.get('/updatebesoin', SauteuhzController.Medocs_update_besoin);
 //routeur.get('*', 404);
 
