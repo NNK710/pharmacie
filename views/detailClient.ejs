@@ -11,7 +11,13 @@
                 
                     <tr>
                         <td>
-                            <strong> <%= user.cli_secu %> <%= user.cli_nom %> <%= user.cli_prenom %> <%= user.cli_naissance %> <%= user.cli_mutuelle %></strong>
+                            <strong><%= user.cli_nom %> <%= user.cli_prenom %></strong>
+                        </td>
+                        <td>
+                            <strong><%= user.cli_naissance %></strong>
+                        </td>
+                        <td>
+                            <strong> <%= user.cli_secu %> <%= user.cli_mutuelle %></strong>
                         </td>
                     </tr>
                
