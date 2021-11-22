@@ -24,21 +24,26 @@ module.exports = {
         },
 
         Clients_detail: (req, res) =>{
-                let cli_Id = req.query['cli_Id'];
-                console.log(cli_Id);
+                let cli_secu = req.query['cli_secu'];
+                console.log(cli_secu);
                 sauteuhzModel.Clients_detail(function(lignes){
                         console.log(lignes)
                         res.render("./detailClient", {index : lignes});
-                }, cli_Id);
+                }, cli_secu);
         },
 
-        AjouterClient: (req, res) =>{
-                /* A remplacer par les secu et tt*/
-                let medoc_Id = req.query['medoc_Id'];
-                let medoc = req.query['medoc'];
-                let mois = req.query['mois'];
-                sauteuhzModel.Ajouter_client(cli_nom, cli_prenom, cli_naissance, cli_secu, cli_mutuelle)
+        Ajouter_Client: (req, res) =>{
 
+                res.render("./ajouterClient" ); 
+        },
+
+        Add_Client: (req, res) =>{
+                let cli_secu = req.query['cli_secu'];
+                let cli_nom = req.query['cli_nom'];
+                let cli_prenom = req.query['cli_prenom'];
+                let cli_naissance = req.query['cli_naissance'];
+                let cli_mutuelle = req.query['cli_mutuelle'];
+                sauteuhzModel.Ajouter_client( cli_secu, cli_nom, cli_prenom, cli_naissance, cli_mutuelle)
                 res.render("./ajouterClient" ); 
         },
 

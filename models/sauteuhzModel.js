@@ -12,7 +12,7 @@ module.exports={
     Clients_affichage:function(callback){
   
     
-        var sql='SELECT cli_Id, cli_nom, cli_prenom FROM client';
+        var sql='SELECT cli_secu, cli_nom, cli_prenom FROM client';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
@@ -20,10 +20,10 @@ module.exports={
         
     },
 
-    Clients_detail:function(callback, cli_Id){
+    Clients_detail:function(callback, cli_secu){
 
-        console.log(cli_Id);
-        var sql='SELECT * FROM client where cli_Id = '+cli_Id+'';
+        console.log(cli_secu);
+        var sql='SELECT * FROM client where cli_secu = '+cli_secu+'';
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
@@ -32,10 +32,10 @@ module.exports={
 
     Ajouter_client:function(cli_secu, cli_nom, cli_prenom, cli_naissance, cli_mutuelle){
 
-        var sql='Insert Into client (cli_secu, cli_nom, cli_prenom, cli_naissance, cli_mutuelle) Values ('+cli_secu+', '+cli_nom+', '+cli_prenom+', '+cli_naissance+', '+cli_mutuelle+') ';
+        var sql="Insert Into client (cli_secu, cli_nom, cli_prenom, cli_naissance, cli_mutuelle) Values ('"+cli_secu+"', '"+cli_nom+"', '"+cli_prenom+"', '"+cli_naissance+"', '"+cli_mutuelle+"') ";
         db.query(sql, function (err, result) {
             if (err) throw err;
-            console.log(result.affectedRows + " record(s) updated");
+            console.log(result.affectedRows + " record(s) created");
           });
     },
 
