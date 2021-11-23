@@ -23,7 +23,7 @@ module.exports={
     Clients_detail:function(callback, cli_secu){
 
         console.log(cli_secu);
-        var sql='SELECT * FROM client where cli_secu = '+cli_secu+'';
+        var sql="SELECT DATE_FORMAT(cli_naissance,'%d/%m/%Y') AS cli_naissance, cli_secu, cli_nom, cli_prenom, cli_mutuelle FROM client where cli_secu = '"+cli_secu+"'";
         db.query(sql, function (err, data, fields){
             if (err) throw err;
             return callback(data);
