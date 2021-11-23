@@ -9,7 +9,8 @@ Dans un premier temps nous avons fait tous les diagrammes :
 -maquettes du site
 
 Pour le choix des couleurs :
-[a compléter]
+Nous avons décider d'un mélange de vert clair er foncé avec un beige, rapellant le vert de la santé
+Et le beige pour ne pas avoir trop de couleurs.
 
 Quand vous arriver sur le site, vous avez accès à la liste des clients ou a celle des médicaments:
 
