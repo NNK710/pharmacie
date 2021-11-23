@@ -98,10 +98,10 @@ module.exports={
 
     },
 
-    Medocs_update_besoin: (medoc, mois) =>{
+    Medocs_update_besoin: (medoc, mois, medoc_Id) =>{
         
 
-        let sql = "UPDATE medicament SET medoc_besoin"+mois+" = '"+medoc+"' WHERE medoc_Id = '"+mois+"'";
+        let sql = "UPDATE medicament SET medoc_besoin"+mois+" = '"+medoc+"' WHERE medoc_Id = '"+medoc_Id+"'";
         db.query(sql, function (err, result) {
           if (err) throw err;
           console.log(result.affectedRows + " record(s) updated");

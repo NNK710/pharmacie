@@ -47,8 +47,9 @@
 <h1>Stock</h1>
 
 
-<form action="updatestock/<%= medoc_Id %>" method="POST">
+<form action="updatestock" method="GET">
 
+    <input type="number" name="medoc_Id" readonly="readonly" value="<%= medoc_Id%>" /> 
     <input type="number" name="medoc">
     <input type="number" name="mois" >
     <input type="submit">
@@ -58,6 +59,7 @@
 <h1>Besoin</h1>
 <form action="updatebesoin" method="GET">
 
+    <input type="number" name="medoc_Id" readonly="readonly" value="<%= medoc_Id%>" /> 
     <input type="number" name="medoc">
     <input type="number" name="mois" >
     <input type="submit">

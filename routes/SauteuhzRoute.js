@@ -31,7 +31,7 @@ routeur.get('/addMedoc', SauteuhzController.Add_Medoc);
 
 routeur.get('/deleteMedoc', SauteuhzController.Delete_Medoc);
 
-routeur.post('/updatestock/:medoc_Id', SauteuhzController.Medocs_update_stock);
+routeur.get('/updatestock', SauteuhzController.Medocs_update_stock);
 routeur.get('/updatebesoin', SauteuhzController.Medocs_update_besoin);
 //routeur.get('*', 404);
 
