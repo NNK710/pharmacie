@@ -4,10 +4,10 @@
         <div id="margeGauche"></div>
         <div id="margeGaucheFade"></div>
     </div>
-        
+
     <div id="listeClients">
-        <a href="ajouterClient"><button>Ajouter client</button></a>
         <table>
+        <a href="ajouterClient"><button>Ajouter client</button></a>
         <% index.forEach(function(user){ %>
             
                 <tr>
@@ -15,7 +15,7 @@
                         <strong><a href="/detailClient?cli_secu=<%= user.cli_secu %>"><%= user.cli_nom %> <%= user.cli_prenom %> </a> </strong>
                     </td>
                 </tr>
-           
+        
 
         <% }) %>
     </table>

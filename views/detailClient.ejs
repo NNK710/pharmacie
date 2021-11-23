@@ -11,17 +11,39 @@
                 
                     <tr>
                         <td>
+                            <strong>Nom et Prenom :</strong>
+                        </td>
+                        <td>
                             <strong><%= user.cli_nom %> <%= user.cli_prenom %></strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>Naissance :</strong>
                         </td>
                         <td>
                             <strong><%= user.cli_naissance %></strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>Num Sécu :</strong>
                         </td>
                         <td>
                             <strong> <%= user.cli_secu %> <%= user.cli_mutuelle %></strong>
                         </td>
                     </tr>
-               
-    
+
+                    <tr>
+                        <td>
+                            <strong>Num Mutuelle :</strong>
+                        </td>
+                        <td>
+                            <strong> <%= user.cli_mutuelle %></strong>
+                        </td>
+                    </tr>            
             <% }) %>
         </table>
         </div>
