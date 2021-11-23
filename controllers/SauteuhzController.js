@@ -91,6 +91,16 @@ module.exports = {
                 },medoc_Id);
         },
 
+        Delete_Medoc: (req, res) =>{
+                medoc_Id = req.query['medoc_Id'];
+                console.log(medoc_Id);
+                sauteuhzModel.Delete_Medoc(medoc_Id)
+                sauteuhzModel.Medocs_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./listeMedocs", {index : lignes});
+                });
+        },
+
         Medocs_update_stock: (req, res) =>{
                 let medoc_Id = req.params.medoc_Id;
                 let medoc = req.body.medoc;

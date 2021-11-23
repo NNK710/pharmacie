@@ -45,7 +45,7 @@ module.exports={
         console.log(sql);
         db.query(sql, function (err, result) {
             if (err) throw err;
-            console.log(result.affectedRows + " record(s) created");
+            console.log(result.affectedRows + " record(s) Deleted");
           });
     },
 
@@ -75,6 +75,16 @@ module.exports={
             if (err) throw err;
             return callback(data);
         });
+    },
+
+    Delete_Medoc:function(medoc_Id){
+
+        var sql="Delete From medicament where medoc_Id = '"+medoc_Id+"'";
+        console.log(sql);
+        db.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) Deleted");
+          });
     },
 
     Medocs_update_stock: (medoc, mois, medoc_Id) =>{
