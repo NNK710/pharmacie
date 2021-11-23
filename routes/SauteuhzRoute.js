@@ -24,6 +24,8 @@ routeur.get('/detailMedoc/', SauteuhzController.Medocs_detail);
 routeur.get('/ajouterClient/', SauteuhzController.Ajouter_Client);
 routeur.get('/addClient', SauteuhzController.Add_Client);
 
+routeur.get('/deleteClient', SauteuhzController.Delete_Client)
+
 routeur.get('/ajouterMedoc/', SauteuhzController.Ajouter_Medoc);
 routeur.get('/addMedoc', SauteuhzController.Add_Medoc);
 

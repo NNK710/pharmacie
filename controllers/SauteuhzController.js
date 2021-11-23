@@ -49,6 +49,16 @@ module.exports = {
                 });
         },
 
+        Delete_Client: (req, res) =>{
+                cli_Id = req.query['cli_Id'];
+                console.log(cli_Id);
+                sauteuhzModel.Delete_Client(cli_Id)
+                sauteuhzModel.Clients_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./listeClients", {index : lignes});
+                });
+        },
+
         Ajouter_Medoc: (req, res) =>{
 
                 res.render("./ajouterMedoc" ); 
