@@ -39,6 +39,15 @@ module.exports={
           });
     },
 
+    Ajouter_Medoc:function(medoc_nom, medoc_type, medoc_description){
+
+        var sql="Insert Into medicament (medoc_nom, medoc_type, medoc_description) Values ('"+medoc_nom+"', '"+medoc_type+"', '"+medoc_description+"') ";
+        db.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log(result.affectedRows + " record(s) created");
+          });
+    },
+
 
     Medocs_affichage:function(callback) {
 

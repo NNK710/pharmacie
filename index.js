@@ -8,7 +8,7 @@ let app = express()
 app.set('view engine', 'ejs')
 app.use(express.static('views'))
 app.use(express.static('public'))
-app.use('/', Routeur);
+app.use('/', Routeur);-
 app.use('/image', express.static(__dirname + '/images'));
 
 //Définition du port d'écoute

@@ -1,7 +1,6 @@
 //Importation de la connexion à la bdd
-const { urlencoded } = require('body-parser');
+const bodyParser = require('body-parser');
 var db = require('../database');
-const { Chart_affichage } = require('../models/sauteuhzModel');
 //Importation du fichier models
 var sauteuhzModel = require('../models/sauteuhzModel');
 
@@ -50,6 +49,23 @@ module.exports = {
                 });
         },
 
+        Ajouter_Medoc: (req, res) =>{
+
+                res.render("./ajouterMedoc" ); 
+        },
+
+        Add_Medoc: (req, res) =>{
+                let medoc_nom = req.query['medoc_nom'];
+                let medoc_type = req.query['medoc_type'];
+                let medoc_description = req.query['medoc_description'];
+                sauteuhzModel.Ajouter_Medoc( medoc_nom, medoc_type, medoc_description)
+                sauteuhzModel.Medocs_affichage(function(lignes){
+                        console.log(lignes)
+                        res.render("./listeMedocs", {index : lignes});
+                });
+        },
+
+
         Medocs_affichage: (req, res) =>{
                 sauteuhzModel.Medocs_affichage(function(lignes){
                         console.log(lignes)
@@ -67,9 +83,10 @@ module.exports = {
 
         Medocs_update_stock: (req, res) =>{
                 let medoc_Id = req.params.medoc_Id;
-                let medoc = req.params.medoc;
-                let mois = req.params.mois;
+                let medoc = req.body.medoc;
+                let mois = req.body.mois;
                 console.log(medoc_Id);
+                console.log(medoc);
 
                 let Mois = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"];
                 mois = Mois[mois-1];
@@ -79,7 +96,7 @@ module.exports = {
                 
                 sauteuhzModel.Chart_affichage(function(lignes){
                         console.log(lignes)
-                        res.render("./testchart", {index : lignes, medid : medoc_Id});
+                        res.render("./testchart", {index : lignes, medoc_Id : medoc_Id});
                 }, medoc_Id);
 
         },
@@ -108,7 +125,7 @@ module.exports = {
                 console.log(medoc_Id);
                 sauteuhzModel.Chart_affichage(function(lignes){
                         console.log(lignes)
-                        res.render("./testchart", {index : lignes, medid : medoc_Id});
+                        res.render("./testchart", {index : lignes, medoc_Id : medoc_Id});
                 }, medoc_Id);
         },
 

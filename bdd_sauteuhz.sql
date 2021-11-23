@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 19 nov. 2021 à 14:15
+-- Généré le : mar. 23 nov. 2021 à 07:50
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -29,21 +29,29 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
-  `cli_secu` varchar(15) NOT NULL,
+  `cli_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `cli_secu` varchar(50) NOT NULL,
   `cli_nom` varchar(50) NOT NULL,
   `cli_prenom` varchar(50) NOT NULL,
   `cli_naissance` date NOT NULL,
   `cli_mutuelle` varchar(30) NOT NULL,
-  PRIMARY KEY (`cli_secu`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`cli_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`cli_secu`, `cli_nom`, `cli_prenom`, `cli_naissance`, `cli_mutuelle`) VALUES
-('0125684783156', 'DYLIAM', 'Bob', '1985-10-13', '41876867116879718'),
-('1234556984', 'DUCHMOL', 'Fabrice', '1971-09-24', '187931146821');
+INSERT INTO `client` (`cli_Id`, `cli_secu`, `cli_nom`, `cli_prenom`, `cli_naissance`, `cli_mutuelle`) VALUES
+(1, '0125684783156', 'DYLIAM', 'Bob', '1985-10-13', '41876867116879718'),
+(2, '1234556984', 'DUCHMOL', 'Fabrice', '1971-09-24', '187931146821'),
+(3, '97191875178', 'adzdaz', 'dzdzdzdzd', '2021-11-30', '879azd71897'),
+(4, '1234567891234', 'Michel', 'Nils', '2002-05-03', '12345678901234'),
+(5, '87148791', 'azeazeazeaeazea', 'ebvdbcbvcvbc', '2021-10-26', '817az9e'),
+(11, '1678998', 'ezzzzzzzzz', 'vvvvvvvv', '2021-11-09', '9879azeaz'),
+(12, 'aze', 'aze', 'aze', '2021-11-11', 'azea'),
+(13, '1678998', 'ezzzzzzzzz', 'vvvvvvvv', '2021-11-09', '9879azeaz'),
+(14, 'azd', 'aze', 'z', '2021-11-02', 'azd');
 
 -- --------------------------------------------------------
 
@@ -73,40 +81,41 @@ CREATE TABLE IF NOT EXISTS `medicament` (
   `medoc_nom` varchar(50) NOT NULL,
   `medoc_type` varchar(50) NOT NULL,
   `medoc_description` varchar(500) NOT NULL,
-  `medoc_stockJanvier` int(11) NOT NULL,
-  `medoc_besoinJanvier` int(11) NOT NULL,
-  `medoc_stockFevrier` int(11) NOT NULL,
-  `medoc_besoinFevrier` int(11) NOT NULL,
-  `medoc_stockMars` int(11) NOT NULL,
-  `medoc_besoinMars` int(11) NOT NULL,
-  `medoc_stockAvril` int(11) NOT NULL,
-  `medoc_besoinAvril` int(11) NOT NULL,
-  `medoc_stockMai` int(11) NOT NULL,
-  `medoc_besoinMai` int(11) NOT NULL,
-  `medoc_stockJuin` int(11) NOT NULL,
-  `medoc_besoinJuin` int(11) NOT NULL,
-  `medoc_stockJuillet` int(11) NOT NULL,
-  `medoc_besoinJuillet` int(11) NOT NULL,
-  `medoc_stockAout` int(11) NOT NULL,
-  `medoc_besoinAout` int(11) NOT NULL,
-  `medoc_stockSeptembre` int(11) NOT NULL,
-  `medoc_besoinSeptembre` int(11) NOT NULL,
-  `medoc_stockOctobre` int(11) NOT NULL,
-  `medoc_besoinOctobre` int(11) NOT NULL,
-  `medoc_stockNovembre` int(11) NOT NULL,
-  `medoc_besoinNovembre` int(11) NOT NULL,
-  `medoc_stockDecembre` int(11) NOT NULL,
-  `medoc_besoinDecembre` int(11) NOT NULL,
+  `medoc_stockJanvier` int(11) DEFAULT NULL,
+  `medoc_besoinJanvier` int(11) DEFAULT NULL,
+  `medoc_stockFevrier` int(11) DEFAULT NULL,
+  `medoc_besoinFevrier` int(11) DEFAULT NULL,
+  `medoc_stockMars` int(11) DEFAULT NULL,
+  `medoc_besoinMars` int(11) DEFAULT NULL,
+  `medoc_stockAvril` int(11) DEFAULT NULL,
+  `medoc_besoinAvril` int(11) DEFAULT NULL,
+  `medoc_stockMai` int(11) DEFAULT NULL,
+  `medoc_besoinMai` int(11) DEFAULT NULL,
+  `medoc_stockJuin` int(11) DEFAULT NULL,
+  `medoc_besoinJuin` int(11) DEFAULT NULL,
+  `medoc_stockJuillet` int(11) DEFAULT NULL,
+  `medoc_besoinJuillet` int(11) DEFAULT NULL,
+  `medoc_stockAout` int(11) DEFAULT NULL,
+  `medoc_besoinAout` int(11) DEFAULT NULL,
+  `medoc_stockSeptembre` int(11) DEFAULT NULL,
+  `medoc_besoinSeptembre` int(11) DEFAULT NULL,
+  `medoc_stockOctobre` int(11) DEFAULT NULL,
+  `medoc_besoinOctobre` int(11) DEFAULT NULL,
+  `medoc_stockNovembre` int(11) DEFAULT NULL,
+  `medoc_besoinNovembre` int(11) DEFAULT NULL,
+  `medoc_stockDecembre` int(11) DEFAULT NULL,
+  `medoc_besoinDecembre` int(11) DEFAULT NULL,
   PRIMARY KEY (`medoc_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `medicament`
 --
 
 INSERT INTO `medicament` (`medoc_Id`, `medoc_photo`, `medoc_nom`, `medoc_type`, `medoc_description`, `medoc_stockJanvier`, `medoc_besoinJanvier`, `medoc_stockFevrier`, `medoc_besoinFevrier`, `medoc_stockMars`, `medoc_besoinMars`, `medoc_stockAvril`, `medoc_besoinAvril`, `medoc_stockMai`, `medoc_besoinMai`, `medoc_stockJuin`, `medoc_besoinJuin`, `medoc_stockJuillet`, `medoc_besoinJuillet`, `medoc_stockAout`, `medoc_besoinAout`, `medoc_stockSeptembre`, `medoc_besoinSeptembre`, `medoc_stockOctobre`, `medoc_besoinOctobre`, `medoc_stockNovembre`, `medoc_besoinNovembre`, `medoc_stockDecembre`, `medoc_besoinDecembre`) VALUES
-(1, NULL, 'Doliprane', 'Comprimées', 'Paracétamol efficace pour tout', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2, NULL, 'Advil', 'Sirop', 'Sirop pour la toux pour les enfants.', 50, 10, 40, 20, 35, 50, 20, 2, 24, 40, 12, 27, 40, 50, 2, 2, 45, 20, 42, 20, 40, 47, 10, 5);
+(1, NULL, 'Doliprane', 'Comprimées', 'Paracétamol efficace pour tout', 60, 20, 20, 8, 7, 13, 28, 45, 38, 50, 40, 30, 20, 14, 28, 54, 10, 15, 60, 40, 40, 36, 35, 32),
+(2, NULL, 'Advil', 'Sirop', 'Sirop pour la toux pour les enfants.', 2, 10, 40, 20, 35, 50, 20, 2, 24, 40, 12, 27, 40, 50, 2, 2, 45, 20, 42, 20, 40, 47, 20, 5),
+(3, NULL, 'Smecta', 'Poudre', 'Contre la diarée', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
