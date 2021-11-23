@@ -7,14 +7,12 @@ var sauteuhzModel = require('../models/sauteuhzModel');
 //Exportation des fonctions du controller
 module.exports = {
 
+        // Redirection vers l'accueil
         Sauteuhz_accueil : (req, res) => {
                 res.render("./index");
         },
 
-        // Sauteuhz_testchart : (req, res) => {
-        //         res.render("./testchart");
-        //  },
-
+        //Affichage des médocs
         Clients_affichage: (req, res) => {
                 sauteuhzModel.Clients_affichage(function(lignes){
                         console.log(lignes)
@@ -22,6 +20,7 @@ module.exports = {
                 });
         },
 
+        // Affichage des détails d'un médoc
         Clients_detail: (req, res) =>{
                 let cli_secu = req.query['cli_secu'];
                 console.log(cli_secu);
@@ -31,11 +30,13 @@ module.exports = {
                 }, cli_secu);
         },
 
+        // Redirection vers page ajout client
         Ajouter_Client: (req, res) =>{
 
                 res.render("./ajouterClient" ); 
         },
 
+        // Ajouter un client
         Add_Client: (req, res) =>{
                 let cli_secu = req.query['cli_secu'];
                 let cli_nom = req.query['cli_nom'];
@@ -49,6 +50,7 @@ module.exports = {
                 });
         },
 
+        // Supprimer un client
         Delete_Client: (req, res) =>{
                 cli_Id = req.query['cli_Id'];
                 console.log(cli_Id);
@@ -59,11 +61,13 @@ module.exports = {
                 });
         },
 
+        // Redirection vers page d'ajout médoc
         Ajouter_Medoc: (req, res) =>{
 
                 res.render("./ajouterMedoc" ); 
         },
 
+        // Ajouter un médoc
         Add_Medoc: (req, res) =>{
                 let medoc_nom = req.query['medoc_nom'];
                 let medoc_type = req.query['medoc_type'];
@@ -75,7 +79,7 @@ module.exports = {
                 });
         },
 
-
+        // Affichage des medocs
         Medocs_affichage: (req, res) =>{
                 sauteuhzModel.Medocs_affichage(function(lignes){
                         console.log(lignes)
@@ -83,6 +87,7 @@ module.exports = {
                 });
         },
 
+        // Affichage des détails d'un medoc
         Medocs_detail: (req, res) =>{
                 let medoc_Id = req.query['medoc_Id'];
                 sauteuhzModel.Medocs_detail(function(lignes){
@@ -91,6 +96,7 @@ module.exports = {
                 },medoc_Id);
         },
 
+        // Supprimer médoc
         Delete_Medoc: (req, res) =>{
                 medoc_Id = req.query['medoc_Id'];
                 console.log(medoc_Id);
@@ -101,6 +107,7 @@ module.exports = {
                 });
         },
 
+        // Mise à jour du stock
         Medocs_update_stock: (req, res) =>{
                 let medoc_Id = req.params.medoc_Id;
                 let medoc = req.body.medoc;
@@ -121,6 +128,7 @@ module.exports = {
 
         },
 
+        // Mise à jour du besoin
         Medocs_update_besoin: (req, res) =>{
                 let medoc_Id = req.query['medoc_Id'];
                 let medoc = req.query['medoc'];
@@ -140,6 +148,7 @@ module.exports = {
 
         },
 
+        // Affichage du graphique d'un medoc
         Chart_affichage: (req, res) =>{
                 let medoc_Id = req.query['medoc_Id'];
                 console.log(medoc_Id);

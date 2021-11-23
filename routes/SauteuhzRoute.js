@@ -8,7 +8,7 @@ const SauteuhzController = require('../controllers/SauteuhzController');
 const routeur = express.Router();
 
 
-//Définition des routes et des fonctions associées
+//Définition des routes et des fonctions controller associées
 routeur.get('/', SauteuhzController.Sauteuhz_accueil);
 
 routeur.get('/testchart', SauteuhzController.Chart_affichage);
