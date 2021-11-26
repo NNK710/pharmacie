@@ -6,7 +6,7 @@ var urlencodedParser = express.urlencoded({ extended: false })
 const SauteuhzController = require('../controllers/SauteuhzController');
 //création du routeur Express pour ce module
 const routeur = express.Router();
-
+routeur.use(express.urlencoded());
 
 //Définition des routes et des fonctions controller associées
 routeur.get('/', SauteuhzController.Sauteuhz_accueil);
@@ -33,6 +33,9 @@ routeur.get('/deleteMedoc', SauteuhzController.Delete_Medoc);
 
 routeur.get('/updatestock', SauteuhzController.Medocs_update_stock);
 routeur.get('/updatebesoin', SauteuhzController.Medocs_update_besoin);
+
+routeur.get('/connexion', SauteuhzController.Compte_connection);
+routeur.post('/connect', SauteuhzController.Compte_connect);
 //routeur.get('*', 404);
 
 

@@ -1,5 +1,6 @@
 //Importation de la connexion à la bdd
 const bodyParser = require('body-parser');
+const iniparser = require('iniparser');
 var db = require('../database');
 //Importation du fichier models
 var sauteuhzModel = require('../models/sauteuhzModel');
@@ -158,5 +159,27 @@ module.exports = {
                         res.render("./testchart", {index : lignes, medoc_Id : medoc_Id});
                 }, medoc_Id);
         },
+
+        Compte_connection: (req, res) =>{
+
+                res.render("./connexion");
+
+        },
+
+        Compte_connect: (req, res) =>{
+                let compte_nom = req.body.nom;
+                let compte_prenom = req.body.prenom;
+                let compte_mdp = req.body.mdp;
+                console.log(compte_nom, compte_prenom, compte_mdp);
+                sauteuhzModel.Compte_connect(function(lignes){
+                        console.log(lignes);
+                        if(lignes !== ""){
+                                res.render("./index", {index : lignes});
+                        }else{
+                                res.render("./connexion");
+                        }
+                }, compte_nom, compte_prenom, compte_mdp );
+
+        }
 
 }

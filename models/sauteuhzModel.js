@@ -115,6 +115,15 @@ module.exports={
             if (err) throw err;
             return callback(data);
         });
-    }
+    },
+
+    Compte_connect:function(callback, compte_nom, compte_prenom, compte_mdp) {
+
+        var sql="SELECT * FROM compte where compte_Nom='"+compte_nom+"' And compte_Prenom = '"+compte_prenom+"' And compte_Mdp = '"+compte_mdp+"'";
+        db.query(sql, function (err, data, fields){
+            if (err) throw err;
+            return callback(data);
+        });
+    },
 
 }
